@@ -5,11 +5,20 @@ pygame.init()
 
 # Générer fenêtre
 pygame.display.set_caption("Commet Fall Game") # Titre de la fenêtre
-pygame.display.set_mode((1080,720)) #Définition dimension fenêtre
+screen = pygame.display.set_mode((1080,720)) #Définition dimension fenêtre
+
+# Charger l'arrière plan
+background = pygame.image.load('assets/bg.jpg')
 
 #Boucle du jeu
 running = True
 while running:
+    # Appliquer l'arrière plan
+    screen.blit(background, (0, 0))
+
+    # Mettre à jour la fenêtre
+    pygame.display.flip()
+    
     #Si le joueur ferme la fenêtre
     for event in pygame.event.get():
         if event.type == pygame.QUIT: #si fermeture de fenêtre
