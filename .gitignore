@@ -1,0 +1,10 @@
+# Environnements virtuels (noms les plus courants)
+venv/
+.venv/
+env/
+.env/
+bin/
+include/
+lib/
+share/
+pyvenv.cfg
