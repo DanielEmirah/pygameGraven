@@ -14,11 +14,11 @@ background = pygame.image.load('assets/bg.jpg')
 running = True
 while running:
     # Appliquer l'arrière plan
-    screen.blit(background, (0, 0))
+    screen.blit(background, (0, -200))
 
     # Mettre à jour la fenêtre
     pygame.display.flip()
-    
+
     #Si le joueur ferme la fenêtre
     for event in pygame.event.get():
         if event.type == pygame.QUIT: #si fermeture de fenêtre
