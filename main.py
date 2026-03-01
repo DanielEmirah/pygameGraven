@@ -1,27 +1,8 @@
 import pygame
+from game import Game
 
 # Charger les composants à l'intérieur de pygame
 pygame.init()
-
-#  Class Game qui va réprésenter le jeu
-class Game():
-    def __init__(self):
-        # Générer le joueur
-        self.player = Player()
-
-
-# Représentation joueur avec une class
-class Player(pygame.sprite.Sprite ):
-    def __init__(self):
-        super().__init__()
-        self.health = 100
-        self.max_health = 100
-        self.attack = 10
-        self.velocity = 5
-        self.image = pygame.image.load('assets/player.png')
-        self.rect = self.image.get_rect()
-        self.rect.x = 400
-        self.rect.y = 500
 
 # Générer fenêtre
 pygame.display.set_caption("Commet Fall Game") # Titre de la fenêtre
