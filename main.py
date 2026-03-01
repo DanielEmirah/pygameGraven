@@ -3,6 +3,13 @@ import pygame
 # Charger les composants à l'intérieur de pygame
 pygame.init()
 
+#  Class Game qui va réprésenter le jeu
+class Game():
+    def __init__(self):
+        # Générer le joueur
+        self.player = Player()
+
+
 # Représentation joueur avec une class
 class Player(pygame.sprite.Sprite ):
     def __init__(self):
@@ -23,8 +30,8 @@ screen = pygame.display.set_mode((1080,720)) #Définition dimension fenêtre
 # Charger l'arrière plan
 background = pygame.image.load('assets/bg.jpg')
 
-# Charger le joueur
-player = Player()
+# Charger le jeu
+game = Game()
 
 #Boucle du jeu
 running = True
@@ -33,7 +40,7 @@ while running:
     screen.blit(background, (0, -200))
 
     # Appliquer l'image du joueur
-    screen.blit(player.image, player.rect)
+    screen.blit(game.player.image, game.player.rect)
 
     # Mettre à jour la fenêtre
     pygame.display.flip()
