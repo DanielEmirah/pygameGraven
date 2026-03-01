@@ -3,6 +3,17 @@ import pygame
 # Charger les composants à l'intérieur de pygame
 pygame.init()
 
+# Représentation joueur avec une class
+class Player(pygame.sprite.Sprite ):
+    def __init__(self):
+        super().__init__()
+        self.health = 100
+        self.max_health = 100
+        self.attack = 10
+        self.velocity = 5
+        self.image = pygame.image.load('assets/player.png')
+        self.rect = self.image.get_rect()
+
 # Générer fenêtre
 pygame.display.set_caption("Commet Fall Game") # Titre de la fenêtre
 screen = pygame.display.set_mode((1080,720)) #Définition dimension fenêtre
@@ -10,11 +21,17 @@ screen = pygame.display.set_mode((1080,720)) #Définition dimension fenêtre
 # Charger l'arrière plan
 background = pygame.image.load('assets/bg.jpg')
 
+# Charger le joueur
+player = Player()
+
 #Boucle du jeu
 running = True
 while running:
     # Appliquer l'arrière plan
     screen.blit(background, (0, -200))
+
+    # Appliquer l'image du joueur
+    screen.blit(player.image, player.rect)
 
     # Mettre à jour la fenêtre
     pygame.display.flip()
